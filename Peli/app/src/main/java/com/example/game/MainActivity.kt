@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.game.ui.theme.GameTheme
@@ -44,7 +45,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Guess the number 1-10 ! (Made by Verner, 2400345)",
+        text = stringResource(R.string.title_text),
         modifier = modifier
     )
     GameTextField()
@@ -62,8 +63,8 @@ fun GameTextField(modifier: Modifier = Modifier) {
         TextField(
             value = textState.value,
             onValueChange = { textState.value = it },
-            label = { Text("Enter your guess..") },
-            placeholder = { Text("ex. 10") },
+            label = { Text(stringResource(R.string.enter_text)) },
+            placeholder = { Text(stringResource(R.string.example_text)) },
         )
 
         Button(
@@ -78,7 +79,7 @@ fun GameTextField(modifier: Modifier = Modifier) {
             },
             modifier = Modifier.padding(top = 16.dp)
         ) {
-            Text("Play")
+            Text(stringResource(R.string.button_text_play))
         }
 
         Button(
@@ -88,7 +89,7 @@ fun GameTextField(modifier: Modifier = Modifier) {
                 textState.value = ""
             },
         ) {
-            Text("Reset")
+            Text(stringResource(R.string.button_text_reset))
         }
 
         if (resultText.value.isNotEmpty()) {
