@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">YliAli</string>
+    <string name="text_title">Guessing game made by Verner Etola 2400345</string>
+    <string name="text_label">Guessing game</string>
+    <string name="text_placeholder">ex. 1-10</string>
+    <string name="button_play">Play</string>
+    <string name="button_reset">Reset</string>
+    <string name="text_correct">Correct</string>
+    <string name="text_too_high">Too high</string>
+    <string name="text_too_low">Too low</string>
+</resources>
