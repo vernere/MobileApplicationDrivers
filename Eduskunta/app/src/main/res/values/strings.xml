@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Eduskunta</string>
+    <string name="text_title_kansanedustajat">Kansanedustajat</string>
+    <string name="text_title_vaalipiiri">Vaalipiiri</string>
+    <string name="text_title_puolue">Puolue</string>
+    <string name="text_title_arvo">Lisää arvio</string>
+    <string name="text_label_positiivinen">Positiivinen</string>
+    <string name="text_label_negatiivinen">Negatiivinen</string>
+    <string name="text_label_placeholder">Kirjoita jotain...</string>
+    <string name="text_label_lähetä">Lähetä</string>
+    <string name="text_label_ei_arvioita">Ei arvioita vielä</string>
 </resources>

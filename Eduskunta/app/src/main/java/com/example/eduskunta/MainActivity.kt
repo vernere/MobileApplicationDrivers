@@ -11,37 +11,45 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.eduskunta.components.MpListScreenContent
+import com.example.eduskunta.local.AppDatabase
+import com.example.eduskunta.local.MpEntity
+import com.example.eduskunta.navigation.AppNavigation
 import com.example.eduskunta.ui.theme.EduskuntaTheme
+import com.example.eduskunta.viewModel.GroupBy
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        val database = AppDatabase.getDatabase(this)
+
         setContent {
             EduskuntaTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                AppNavigation(database = database)
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+private val previewMps = listOf(
+    MpEntity(1, "Petteri", "Orpo", "Kokoomus", "Uusimaa", null, "1969", null),
+    MpEntity(2, "Sari", "Essayah", "KD", "Savo-Karjala", "@sessayah", "1967", null),
+    MpEntity(3, "Li", "Andersson", "Vas", "Varsinais-Suomi", "@liandersson", "1987", null),
+)
+
+private val previewGrouped = mapOf(
+    "Kokoomus" to listOf(previewMps[0]),
+    "KD" to listOf(previewMps[1]),
+    "Vas" to listOf(previewMps[2])
+)
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    EduskuntaTheme {
-        Greeting("Android")
-    }
+fun MpListScreenPreview() {
+    MpListScreenContent(
+        groupedMps = previewGrouped,
+        groupBy = GroupBy.PARTY,
+        onToggleGrouping = {},
+        onNavigateToDetail = {}
+    )
 }
