@@ -43,6 +43,7 @@ import com.example.eduskunta.R
 import com.example.eduskunta.local.MpEntity
 import com.example.eduskunta.local.ReviewEntity
 import com.example.eduskunta.utilities.MpImageUrl
+import com.example.eduskunta.utilities.PartyNames
 import com.example.eduskunta.utilities.calculateAge
 import com.example.eduskunta.viewModel.MpDetailViewModel
 
@@ -51,7 +52,7 @@ import com.example.eduskunta.viewModel.MpDetailViewModel
 @Composable
 fun MpDetailScreenContentPreview() {
     MpDetailScreenContent(
-        mp = MpEntity(778, "Sari", "Essayah", "KD", "Savo-Karjala", "@sessayah", "1967", 14),
+        mp = MpEntity(778, "Sari", "Essayah", "KD", "Savo-Karjala", "@sessayah", 1967, 14, picture = "attachment/member/pictures/Essayah-Sari-web-v8260-778.JPG"),
         reviews = listOf(
             ReviewEntity(1, 778, true, "Hyvä puhe!", "2.2.2026"),
             ReviewEntity(2, 778, false, "En ole samaa mieltä.", "15.2.2026")
@@ -117,7 +118,7 @@ fun MpDetailScreenContent(
                         style = MaterialTheme.typography.headlineSmall
                     )
                     Spacer(modifier = Modifier.height(4.dp))
-                    Text("Puolue: ${mp.party}")
+                    Text("Puolue: ${PartyNames.getFullName(mp.party)}")
                     Text("Vaalipiiri: ${mp.constituency}")
                     Text("Ikä: ${calculateAge(mp.bornYear)} vuotta")
 
@@ -134,6 +135,10 @@ fun MpDetailScreenContent(
                         )
                     }
                 }
+                HorizontalDivider()
+            }
+            item {
+                AddReviewSection(onSubmit = onAddReview)
                 HorizontalDivider()
             }
             item {

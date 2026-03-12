@@ -21,13 +21,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.eduskunta.R
 import com.example.eduskunta.local.MpEntity
+import com.example.eduskunta.utilities.PartyNames
 import com.example.eduskunta.viewModel.GroupBy
 import com.example.eduskunta.viewModel.MpListViewModel
 
 private val previewMps = listOf(
-    MpEntity(1, "Petteri", "Orpo", "Kokoomus", "Uusimaa", null, "1969", null),
-    MpEntity(2, "Sari", "Essayah", "KD", "Savo-Karjala", "@sessayah", "1967", null),
-    MpEntity(3, "Li", "Andersson", "Vas", "Varsinais-Suomi", "@liandersson", "1987", null),
+    MpEntity(1, "Petteri", "Orpo", "Kokoomus", "Uusimaa", null, 1969, null, picture = "attachment/member/pictures/Essayah-Sari-web-v8260-778.JPG"),
+    MpEntity(2, "Sari", "Essayah", "KD", "Savo-Karjala", "@sessayah", 1967, null, picture = "attachment/member/pictures/Essayah-Sari-web-v8260-778.JPG"),
+    MpEntity(3, "Li", "Andersson", "Vas", "Varsinais-Suomi", "@liandersson", 1987, null, picture = "attachment/member/pictures/Essayah-Sari-web-v8260-778.JPG"),
 )
 
 private val previewGrouped = mapOf(
@@ -83,7 +84,7 @@ fun MpListScreenContent(
         ) {
             groupedMps.forEach { (groupName, mps) ->
                 item {
-                    GroupHeader(groupName = groupName)
+                    GroupHeader(groupName = PartyNames.getFullName(groupName))
                 }
                 items(mps) { mp ->
                     MpRow(

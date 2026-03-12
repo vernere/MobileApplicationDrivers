@@ -11,6 +11,7 @@ data class MpEntity(
     val party: String,
     val constituency: String,
     val twitter: String?,
-    val bornYear: String,
-    val seatNumber: Int?
+    val bornYear: Int,
+    val seatNumber: Int?,
+    val picture: String
 )

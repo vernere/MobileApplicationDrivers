@@ -11,5 +11,6 @@ fun MpDto.toEntity(): MpEntity = MpEntity(
     constituency = constituency,
     twitter = twitter,
     bornYear = bornYear,
-    seatNumber = seatNumber
+    seatNumber = seatNumber,
+    picture = picture
 )
