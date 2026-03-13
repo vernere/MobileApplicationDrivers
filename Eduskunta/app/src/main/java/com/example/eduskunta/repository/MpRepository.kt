@@ -24,8 +24,11 @@ class MpRepository(
     suspend fun syncMaps() {
         try {
             val mps = apiService.getMps()
+            android.util.Log.d("MpRepository", "Fetched ${mps.size} MPs")
+            android.util.Log.d("MpRepository", "First picture: ${mps.firstOrNull()?.picture}")
             mpDao.upsertAll(mps.map { it.toEntity() })
         } catch (e: Exception) {
+            android.util.Log.e("MpRepository", "Sync failed: ${e.message}")
             e.printStackTrace()
         }
     }

@@ -5,10 +5,9 @@ import androidx.annotation.RequiresApi
 import java.time.LocalDate
 
 @RequiresApi(Build.VERSION_CODES.O)
-fun calculateAge(born: String): Int {
+fun calculateAge(born: Int): Int {
     return try {
-        val birthYear = born.take(4).toInt()
-        LocalDate.now().year - birthYear
+        LocalDate.now().year - born
     } catch (e: Exception){
         0
     }

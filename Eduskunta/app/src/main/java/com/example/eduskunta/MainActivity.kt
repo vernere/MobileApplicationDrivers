@@ -32,9 +32,9 @@ class MainActivity : ComponentActivity() {
 }
 
 private val previewMps = listOf(
-    MpEntity(1, "Petteri", "Orpo", "Kokoomus", "Uusimaa", null, "1969", null),
-    MpEntity(2, "Sari", "Essayah", "KD", "Savo-Karjala", "@sessayah", "1967", null),
-    MpEntity(3, "Li", "Andersson", "Vas", "Varsinais-Suomi", "@liandersson", "1987", null),
+    MpEntity(1, "Petteri", "Orpo", "Kokoomus", "Uusimaa", null, 1969, null, picture = "attachment/member/pictures/Essayah-Sari-web-v8260-778.JPG"),
+    MpEntity(2, "Sari", "Essayah", "KD", "Savo-Karjala", "@sessayah", 1967, null, picture = "attachment/member/pictures/Essayah-Sari-web-v8260-778.JPG"),
+    MpEntity(3, "Li", "Andersson", "Vas", "Varsinais-Suomi", "@liandersson", 1987, null, picture = "attachment/member/pictures/Essayah-Sari-web-v8260-778.JPG"),
 )
 
 private val previewGrouped = mapOf(

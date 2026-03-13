@@ -4,9 +4,7 @@ object MpImageUrl {
 
     private const val BASE_URL = "https://users.metropolia.fi/~peterh/edustajakuvat/"
 
-    fun getUrl(firstname: String , lastname: String, personNumber: Int): String {
-        val cleanFirst = firstname.trim()
-        val cleanLast = lastname.trim()
-        return "${BASE_URL}${cleanLast}${cleanFirst}-web-${personNumber}.jpg"
+    fun getUrl(firstName: String, lastName: String, personNumber:Int): String {
+       return "${BASE_URL}${lastName}-${firstName}-web-${personNumber}.jpg"
     }
 }

@@ -32,7 +32,7 @@ import com.example.eduskunta.utilities.MpImageUrl
 @Composable
 fun MpRowPreview() {
     MpRow(
-        mp = MpEntity(1, "Petteri", "Orpo", "Kokoomus", "Uusimaa", null, "1969", null),
+        mp = MpEntity(1, "Petteri", "Orpo", "Kokoomus", "Uusimaa", null, 1969, null, picture = "attachment/member/pictures/Essayah-Sari-web-v8260-778.JPG"),
         onClick = {}
     )
 }
